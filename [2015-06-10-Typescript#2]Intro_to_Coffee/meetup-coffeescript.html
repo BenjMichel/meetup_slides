@@ -78,7 +78,7 @@ In CS:
 
 ```coffeescript
 var1 = func1 a, b
-var2 = func2()
+var2 = func2() // () are necessary
 ```
 
 ---
@@ -132,16 +132,25 @@ ages = for child, age of yearsOld
 
 # Flaws
 
-* Indentation sensitive : don't always crash when bad indentation
+* Indentation sensitive : doesn't always crash when bad indentation
+  ```
+  if true
+      x = 1
+       y = 2
+  ```
 * Multiple ways to write the same things : `if not` and `unless`, one line or block style
 * Be careful with parenthesis
+  * `func () -> `   =>  `func(function(){})`
+  * `func() -> `    =>  `func()(function(){})`
+
+* automatic return
 
 ---
 
 # Why using Coffescript ?
 
 * less code and more readable
-* new features like class
+* new features like class and splat
 * use best pratices : === and !==
 * optimized JS
 
